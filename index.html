@@ -1,12 +1,19 @@
 <!DOCTYPE html>
 <html lang="th">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <title>ข่าวสารและประชาสัมพันธ์ | มหาวิทยาลัยราชภัฏนครปฐม</title>
 
+  <!-- Google Font : Prompt -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Prompt:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
   <style>
+
     * {
       box-sizing: border-box;
       margin: 0;
@@ -17,8 +24,13 @@
       scroll-behavior: smooth;
     }
 
+    body,
+    button,
+    a {
+      font-family: "Prompt", sans-serif;
+    }
+
     body {
-      font-family: Tahoma, Arial, sans-serif;
       background: #f5f8fc;
       color: #14233c;
       line-height: 1.65;
@@ -28,23 +40,24 @@
       overflow: hidden;
     }
 
-    /* =========================
+    /* ==============================
        HEADER
-    ========================= */
+    ============================== */
 
-    header {
-      background: rgba(255,255,255,0.97);
-      border-bottom: 1px solid #e5eaf1;
+    .header {
+      background: #ffffff;
+      border-bottom: 1px solid #e7edf5;
       position: sticky;
       top: 0;
       z-index: 100;
-      backdrop-filter: blur(8px);
     }
 
     .header-inner {
       max-width: 1240px;
       margin: auto;
-      padding: 16px 20px;
+      min-height: 82px;
+      padding: 14px 20px;
+
       display: flex;
       align-items: center;
       justify-content: space-between;
@@ -58,93 +71,99 @@
     }
 
     .brand-icon {
-      width: 52px;
-      height: 52px;
+      width: 50px;
+      height: 50px;
       border-radius: 15px;
-      background: linear-gradient(135deg, #1656e8, #377cf7);
+      background: linear-gradient(135deg, #1d5eea, #397af5);
+      color: white;
+
       display: flex;
       align-items: center;
       justify-content: center;
-      color: white;
+
       font-size: 24px;
-      box-shadow: 0 8px 20px rgba(30, 91, 230, 0.20);
+      box-shadow: 0 8px 20px rgba(37, 99, 235, 0.18);
     }
 
     .brand h1 {
-      font-size: 20px;
+      font-size: 21px;
+      font-weight: 600;
       line-height: 1.3;
     }
 
     .brand p {
       font-size: 12px;
-      color: #748198;
+      color: #7b8ba5;
       margin-top: 2px;
     }
 
-    .nav-button {
-      text-decoration: none;
-      color: #155bd8;
+    .header-badge {
       background: #edf4ff;
-      padding: 10px 17px;
+      color: #1d5eea;
+      padding: 10px 18px;
       border-radius: 14px;
       font-size: 14px;
-      font-weight: bold;
+      font-weight: 500;
     }
 
-    /* =========================
+
+    /* ==============================
        HERO
-    ========================= */
+    ============================== */
 
     .hero {
       max-width: 1240px;
       margin: auto;
-      padding: 60px 20px 34px;
+      padding: 65px 20px 38px;
     }
 
-    .hero-label {
-      color: #1760e8;
+    .eyebrow {
+      color: #2563eb;
       font-size: 13px;
-      font-weight: bold;
-      letter-spacing: .6px;
+      font-weight: 600;
+      letter-spacing: 0.5px;
       margin-bottom: 8px;
     }
 
     .hero h2 {
-      font-size: 38px;
-      line-height: 1.3;
-      margin-bottom: 10px;
+      font-size: clamp(30px, 4vw, 44px);
+      font-weight: 600;
+      line-height: 1.25;
+      margin-bottom: 12px;
     }
 
     .hero p {
       color: #64748b;
       font-size: 16px;
-      max-width: 750px;
+      max-width: 720px;
     }
 
-    /* =========================
-       NEWS
-    ========================= */
 
-    main {
+    /* ==============================
+       NEWS
+    ============================== */
+
+    .news-section {
       max-width: 1240px;
       margin: auto;
-      padding: 0 20px 75px;
+      padding: 10px 20px 80px;
     }
 
-    .section-header {
+    .section-heading {
       display: flex;
       align-items: center;
       justify-content: space-between;
-      margin: 15px 0 22px;
+      margin-bottom: 22px;
     }
 
-    .section-header h3 {
-      font-size: 23px;
+    .section-heading h3 {
+      font-size: 22px;
+      font-weight: 600;
     }
 
     .news-count {
+      color: #7b8ba5;
       font-size: 14px;
-      color: #718096;
     }
 
     .news-grid {
@@ -153,409 +172,363 @@
       gap: 26px;
     }
 
-    /* =========================
-       NEWS CARD
-    ========================= */
-
     .news-card {
       background: white;
-      border: 1px solid #e1e7ef;
-      border-radius: 19px;
+      border: 1px solid #e4eaf2;
+      border-radius: 20px;
       overflow: hidden;
+
       display: flex;
       flex-direction: column;
-      box-shadow: 0 5px 16px rgba(30, 50, 80, 0.05);
-      transition: .25s ease;
+
+      transition: transform .25s ease,
+                  box-shadow .25s ease,
+                  border-color .25s ease;
     }
 
     .news-card:hover {
       transform: translateY(-5px);
-      box-shadow: 0 15px 32px rgba(30, 50, 80, 0.12);
+      border-color: #cfddf4;
+      box-shadow: 0 18px 45px rgba(15, 45, 90, 0.10);
     }
 
-    .image-wrapper {
+    .news-image {
       width: 100%;
-      aspect-ratio: 16 / 10;
+      height: 235px;
+      background: #edf2f7;
       overflow: hidden;
-      background: #edf1f6;
     }
 
-    .image-wrapper img {
+    .news-image img {
       width: 100%;
       height: 100%;
-      display: block;
       object-fit: cover;
+      display: block;
       transition: transform .35s ease;
     }
 
-    .news-card:hover img {
+    .news-card:hover .news-image img {
       transform: scale(1.025);
     }
 
-    .card-body {
-      padding: 20px;
+    .news-content {
+      padding: 20px 21px 21px;
+      flex: 1;
+
       display: flex;
       flex-direction: column;
-      flex: 1;
     }
 
-    .meta {
+    .news-meta {
       display: flex;
-      align-items: center;
       justify-content: space-between;
+      align-items: center;
       gap: 10px;
       margin-bottom: 13px;
     }
 
     .category {
+      display: inline-block;
+      padding: 6px 11px;
+      border-radius: 999px;
+
       background: #edf4ff;
-      color: #1760e8;
-      border-radius: 20px;
-      padding: 5px 11px;
-      font-size: 12px;
-      font-weight: bold;
+      color: #2563eb;
+
+      font-size: 11px;
+      font-weight: 500;
     }
 
     .date {
-      color: #8a97aa;
-      font-size: 12px;
+      font-size: 11px;
+      color: #8a98ad;
       white-space: nowrap;
     }
 
-    .news-card h4 {
+    .news-content h4 {
       font-size: 19px;
+      font-weight: 600;
       line-height: 1.45;
       margin-bottom: 10px;
     }
 
-    .description {
-      color: #617087;
-      font-size: 14px;
+    .news-content p {
+      color: #687990;
+      font-size: 13px;
+      line-height: 1.8;
       margin-bottom: 18px;
-      flex-grow: 1;
+      flex: 1;
     }
 
-    .read-more {
+    .read-btn {
       width: 100%;
       border: 0;
-      border-top: 1px solid #edf0f5;
+      border-top: 1px solid #edf1f6;
       background: transparent;
-      padding: 15px 0 0;
-      color: #1760e8;
-      font-family: inherit;
-      font-size: 14px;
-      font-weight: bold;
-      cursor: pointer;
+
+      color: #2563eb;
+      font-size: 13px;
+      font-weight: 500;
+
+      padding-top: 15px;
+
       display: flex;
-      justify-content: space-between;
       align-items: center;
+      justify-content: space-between;
+
+      cursor: pointer;
       text-align: left;
     }
 
-    .read-more:hover {
-      color: #0c46ae;
+    .read-btn:hover {
+      color: #174cc6;
     }
 
-    .arrow {
-      font-size: 20px;
-      transition: transform .2s ease;
-    }
 
-    .read-more:hover .arrow {
-      transform: translateX(4px);
-    }
+    /* ==============================
+       MODAL
+    ============================== */
 
-    /* =========================
-       MODAL BACKGROUND
-    ========================= */
-
-    .modal-overlay {
+    .modal {
       position: fixed;
       inset: 0;
       z-index: 1000;
-      background: rgba(25, 43, 65, 0.68);
-      backdrop-filter: blur(3px);
 
-      display: flex;
+      background: rgba(15, 32, 55, 0.62);
+      backdrop-filter: blur(5px);
+
+      display: none;
       align-items: center;
       justify-content: center;
 
-      padding: 22px;
-
-      opacity: 0;
-      visibility: hidden;
-      transition: opacity .22s ease, visibility .22s ease;
+      padding: 24px;
     }
 
-    .modal-overlay.active {
-      opacity: 1;
-      visibility: visible;
+    .modal.active {
+      display: flex;
     }
 
-    /* =========================
-       MODAL BOX
-    ========================= */
-
-    .modal {
-      background: white;
-      width: 100%;
-      max-width: 570px;
-      max-height: 90vh;
-      overflow-y: auto;
-      border-radius: 24px;
-      padding: 30px;
+    .modal-box {
       position: relative;
+      width: min(720px, 100%);
+      max-height: 90vh;
 
-      box-shadow:
-        0 30px 70px rgba(0,0,0,.25);
+      background: white;
+      border-radius: 24px;
+      overflow-y: auto;
 
-      transform: translateY(20px) scale(.97);
-      transition: transform .22s ease;
+      box-shadow: 0 30px 90px rgba(0, 0, 0, .28);
+
+      animation: modalIn .22s ease;
     }
 
-    .modal-overlay.active .modal {
-      transform: translateY(0) scale(1);
+    @keyframes modalIn {
+      from {
+        opacity: 0;
+        transform: translateY(15px) scale(.98);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+      }
     }
 
-    /* CLOSE */
+    .modal-image {
+      width: 100%;
+      max-height: 390px;
+      object-fit: cover;
+      display: block;
+      background: #edf2f7;
+    }
 
-    .modal-close {
+    .modal-body {
+      padding: 28px 30px 30px;
+    }
+
+    .modal-top {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      flex-wrap: wrap;
+      margin-bottom: 13px;
+    }
+
+    .modal-category {
+      background: #edf4ff;
+      color: #2563eb;
+      padding: 6px 12px;
+      border-radius: 999px;
+      font-size: 11px;
+      font-weight: 500;
+    }
+
+    .modal-date {
+      color: #8a98ad;
+      font-size: 12px;
+    }
+
+    .modal-title {
+      font-size: 25px;
+      line-height: 1.45;
+      font-weight: 600;
+      margin-bottom: 13px;
+    }
+
+    .modal-description {
+      color: #617187;
+      font-size: 14px;
+      line-height: 1.85;
+      margin-bottom: 25px;
+    }
+
+    .modal-actions {
+      display: flex;
+      gap: 12px;
+      justify-content: flex-end;
+    }
+
+    .modal-cancel,
+    .modal-link {
+      border-radius: 12px;
+      padding: 11px 17px;
+      font-size: 13px;
+      font-weight: 500;
+      cursor: pointer;
+      text-decoration: none;
+    }
+
+    .modal-cancel {
+      border: 1px solid #dbe3ed;
+      background: white;
+      color: #516177;
+    }
+
+    .modal-link {
+      border: 1px solid #2563eb;
+      background: #2563eb;
+      color: white;
+    }
+
+    .modal-link:hover {
+      background: #174fc9;
+    }
+
+    .close-x {
       position: absolute;
-      top: 17px;
-      right: 17px;
+      top: 14px;
+      right: 14px;
 
       width: 38px;
       height: 38px;
 
-      border: none;
+      border: 0;
       border-radius: 50%;
 
-      background: #f1f5f9;
-      color: #64748b;
+      background: rgba(255,255,255,.94);
+      color: #24344c;
 
-      font-size: 21px;
+      font-size: 20px;
       cursor: pointer;
 
       display: flex;
       align-items: center;
       justify-content: center;
+
+      box-shadow: 0 4px 14px rgba(0,0,0,.12);
     }
 
-    .modal-close:hover {
-      background: #e5eaf1;
-    }
 
-    /* ICON */
-
-    .modal-icon {
-      width: 55px;
-      height: 55px;
-      border-radius: 15px;
-
-      background: #eaf5ff;
-      color: #1760e8;
-
-      display: flex;
-      align-items: center;
-      justify-content: center;
-
-      font-size: 25px;
-
-      margin-bottom: 20px;
-    }
-
-    .modal-category {
-      display: inline-block;
-      background: #edf4ff;
-      color: #1760e8;
-
-      border-radius: 20px;
-      padding: 5px 11px;
-
-      font-size: 12px;
-      font-weight: bold;
-
-      margin-bottom: 11px;
-    }
-
-    .modal h2 {
-      font-size: 24px;
-      line-height: 1.45;
-      margin-bottom: 6px;
-      padding-right: 35px;
-    }
-
-    .modal-date {
-      color: #8a97aa;
-      font-size: 13px;
-      margin-bottom: 20px;
-    }
-
-    .modal-divider {
-      height: 1px;
-      background: #edf0f5;
-      margin-bottom: 20px;
-    }
-
-    .modal-description {
-      color: #53657c;
-      font-size: 15px;
-      line-height: 1.85;
-      margin-bottom: 18px;
-    }
-
-    .source-box {
-      background: #f7f9fc;
-      border: 1px solid #e8edf4;
-      border-radius: 13px;
-
-      padding: 13px 15px;
-      margin: 18px 0 23px;
-    }
-
-    .source-label {
-      color: #7b8799;
-      font-size: 12px;
-      margin-bottom: 4px;
-    }
-
-    .source-text {
-      color: #1760e8;
-      font-size: 13px;
-      overflow-wrap: anywhere;
-    }
-
-    /* MODAL BUTTONS */
-
-    .modal-actions {
-      display: flex;
-      justify-content: flex-end;
-      gap: 10px;
-    }
-
-    .cancel-button {
-      border: 1px solid #dbe3ed;
-      background: white;
-      color: #334155;
-
-      padding: 11px 18px;
-      border-radius: 11px;
-
-      font-family: inherit;
-      font-weight: bold;
-      font-size: 14px;
-
-      cursor: pointer;
-    }
-
-    .visit-button {
-      border: none;
-      background: #1760e8;
-      color: white;
-
-      padding: 11px 20px;
-      border-radius: 11px;
-
-      font-family: inherit;
-      font-weight: bold;
-      font-size: 14px;
-
-      text-decoration: none;
-
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-
-      box-shadow: 0 6px 14px rgba(23,96,232,.20);
-    }
-
-    .visit-button:hover {
-      background: #104fca;
-    }
-
-    /* =========================
+    /* ==============================
        FOOTER
-    ========================= */
+    ============================== */
 
     footer {
-      text-align: center;
-      padding: 27px 20px;
-      color: #8996a9;
-      font-size: 13px;
-      border-top: 1px solid #e5eaf1;
       background: white;
+      border-top: 1px solid #e7edf5;
+      padding: 27px 20px;
+      text-align: center;
+
+      color: #8795a9;
+      font-size: 12px;
     }
 
-    /* =========================
+
+    /* ==============================
        RESPONSIVE
-    ========================= */
+    ============================== */
 
     @media (max-width: 950px) {
+
       .news-grid {
         grid-template-columns: repeat(2, 1fr);
       }
+
     }
 
     @media (max-width: 650px) {
 
       .header-inner {
-        padding: 13px 15px;
+        min-height: 72px;
       }
 
       .brand-icon {
-        width: 44px;
-        height: 44px;
+        width: 43px;
+        height: 43px;
       }
 
       .brand h1 {
-        font-size: 15px;
+        font-size: 16px;
       }
 
       .brand p {
-        font-size: 10px;
+        display: none;
       }
 
-      .nav-button {
+      .header-badge {
         font-size: 12px;
-        padding: 8px 10px;
+        padding: 8px 11px;
       }
 
       .hero {
-        padding: 40px 16px 25px;
+        padding-top: 42px;
       }
 
-      .hero h2 {
-        font-size: 29px;
-      }
-
-      main {
-        padding-left: 16px;
-        padding-right: 16px;
+      .hero p {
+        font-size: 14px;
       }
 
       .news-grid {
         grid-template-columns: 1fr;
       }
 
-      .modal {
-        padding: 25px 20px 20px;
-        border-radius: 20px;
+      .news-image {
+        height: auto;
+        aspect-ratio: 16 / 9;
       }
 
-      .modal h2 {
-        font-size: 21px;
+      .modal {
+        padding: 12px;
+      }
+
+      .modal-body {
+        padding: 22px 20px 23px;
+      }
+
+      .modal-title {
+        font-size: 20px;
       }
 
       .modal-actions {
         flex-direction: column-reverse;
       }
 
-      .cancel-button,
-      .visit-button {
-        width: 100%;
-        justify-content: center;
+      .modal-cancel,
+      .modal-link {
         text-align: center;
+        width: 100%;
       }
+
     }
 
   </style>
@@ -564,534 +537,490 @@
 
 <body>
 
-<!-- =========================
-     HEADER
-========================= -->
+  <!-- HEADER -->
 
-<header>
+  <header class="header">
 
-  <div class="header-inner">
+    <div class="header-inner">
 
-    <div class="brand">
+      <div class="brand">
 
-      <div class="brand-icon">
-        ▣
+        <div class="brand-icon">▣</div>
+
+        <div>
+          <h1>มหาวิทยาลัยราชภัฏนครปฐม</h1>
+          <p>Nakhon Pathom Rajabhat University</p>
+        </div>
+
       </div>
 
-      <div>
-        <h1>มหาวิทยาลัยราชภัฏนครปฐม</h1>
-        <p>Nakhon Pathom Rajabhat University</p>
+      <div class="header-badge">
+        🏠 ข่าวสารล่าสุด
       </div>
 
     </div>
 
-    <a href="#news" class="nav-button">
-      🏠 ข่าวสารล่าสุด
-    </a>
+  </header>
 
-  </div>
 
-</header>
+  <!-- HERO -->
 
+  <section class="hero">
 
-<!-- =========================
-     HERO
-========================= -->
-
-<section class="hero">
-
-  <div class="hero-label">
-    NPRU NEWS &amp; INFORMATION
-  </div>
-
-  <h2>ข่าวสารและประชาสัมพันธ์</h2>
-
-  <p>
-    รวบรวมข่าวสาร การรับสมัครนักศึกษา ทุนการศึกษา
-    กิจกรรม และข้อมูลที่น่าสนใจจากมหาวิทยาลัยราชภัฏนครปฐม
-  </p>
-
-</section>
-
-
-<!-- =========================
-     NEWS
-========================= -->
-
-<main id="news">
-
-  <div class="section-header">
-    <h3>ข่าวสารล่าสุด</h3>
-    <span class="news-count">7 ข่าว</span>
-  </div>
-
-
-  <div class="news-grid">
-
-
-    <!-- NEWS 7 -->
-
-    <article class="news-card">
-
-      <div class="image-wrapper">
-        <img src="images/News7.webp" alt="NPRU Open Courseware">
-      </div>
-
-      <div class="card-body">
-
-        <div class="meta">
-          <span class="category">การเรียนรู้</span>
-          <span class="date">17 กันยายน 2569</span>
-        </div>
-
-        <h4>Free Courseware</h4>
-
-        <p class="description">
-          อัปสกิลความรู้ฟรี! เรียนได้ทุกที่ ทุกเวลา
-          กับ NPRU Open Courseware ✨
-        </p>
-
-        <button
-          class="read-more"
-          onclick="openModal(
-            'การเรียนรู้',
-            'Free Courseware',
-            '17 กันยายน 2569',
-            'อัปสกิลความรู้ฟรี! เรียนได้ทุกที่ ทุกเวลา กับ NPRU Open Courseware ✨ เปิดโอกาสให้ผู้สนใจเข้าถึงแหล่งเรียนรู้ออนไลน์และพัฒนาทักษะได้อย่างสะดวก',
-            'http://courseware.npru.ac.th/'
-          )"
-        >
-          <span>อ่านรายละเอียด</span>
-          <span class="arrow">→</span>
-        </button>
-
-      </div>
-
-    </article>
-
-
-    <!-- NEWS 6 -->
-
-    <article class="news-card">
-
-      <div class="image-wrapper">
-        <img src="images/News6.webp" alt="วิศวกรรมซอฟต์แวร์">
-      </div>
-
-      <div class="card-body">
-
-        <div class="meta">
-          <span class="category">สาขาแนะนำ</span>
-          <span class="date">15 กันยายน 2569</span>
-        </div>
-
-        <h4>สาขาแนะนำ : วิศวกรรมซอฟต์แวร์</h4>
-
-        <p class="description">
-          ทำความรู้จักสาขาวิชาวิศวกรรมซอฟต์แวร์
-          และการเรียนด้านการพัฒนาซอฟต์แวร์
-        </p>
-
-        <button
-          class="read-more"
-          onclick="openModal(
-            'สาขาแนะนำ',
-            'สาขาแนะนำ : วิศวกรรมซอฟต์แวร์',
-            '15 กันยายน 2569',
-            'ทำความรู้จักสาขาวิชาวิศวกรรมซอฟต์แวร์ เรียนรู้การเขียนโปรแกรม การพัฒนาเว็บ เทคโนโลยีซอฟต์แวร์ และกระบวนการพัฒนาระบบ เพื่อเตรียมความพร้อมสู่อาชีพด้านเทคโนโลยี',
-            'https://admission.npru.ac.th/suggest/detail/39'
-          )"
-        >
-          <span>อ่านรายละเอียด</span>
-          <span class="arrow">→</span>
-        </button>
-
-      </div>
-
-    </article>
-
-
-    <!-- NEWS 5 -->
-
-    <article class="news-card">
-
-      <div class="image-wrapper">
-        <img src="images/News5.jpg" alt="ทุนการศึกษา">
-      </div>
-
-      <div class="card-body">
-
-        <div class="meta">
-          <span class="category">ทุนการศึกษา</span>
-          <span class="date">14 กันยายน 2569</span>
-        </div>
-
-        <h4>ทุนการศึกษาสำหรับนักศึกษา</h4>
-
-        <p class="description">
-          ทุน กยศ./กรอ. ทุนเรียนดีมีเงินเดือน
-          และทุนการศึกษาของมหาวิทยาลัย
-        </p>
-
-        <button
-          class="read-more"
-          onclick="openModal(
-            'ทุนการศึกษา',
-            'ทุนการศึกษาสำหรับนักศึกษา',
-            '14 กันยายน 2569',
-            'ข้อมูลทุนการศึกษาสำหรับนักศึกษา ได้แก่ ทุน กยศ./กรอ. ทุนเรียนดีมีเงินเดือน และทุนการศึกษาของมหาวิทยาลัย ผู้สนใจสามารถตรวจสอบรายละเอียด เงื่อนไข และข้อมูลเพิ่มเติมจากเว็บไซต์ต้นฉบับ',
-            'https://admission.npru.ac.th/scholarship'
-          )"
-        >
-          <span>อ่านรายละเอียด</span>
-          <span class="arrow">→</span>
-        </button>
-
-      </div>
-
-    </article>
-
-
-    <!-- NEWS 4 -->
-
-    <article class="news-card">
-
-      <div class="image-wrapper">
-        <img src="images/News4.png" alt="TOEIC EXAM REGISTRATION">
-      </div>
-
-      <div class="card-body">
-
-        <div class="meta">
-          <span class="category">การสอบ</span>
-          <span class="date">11 กันยายน 2569</span>
-        </div>
-
-        <h4>TOEIC EXAM REGISTRATION</h4>
-
-        <p class="description">
-          เปิดรับสมัครสอบ TOEIC
-          โดยศูนย์ทดสอบ สถาบันภาษา มหาวิทยาลัยราชภัฏนครปฐม
-        </p>
-
-        <button
-          class="read-more"
-          onclick="openModal(
-            'การสอบ',
-            'TOEIC EXAM REGISTRATION',
-            '11 กันยายน 2569',
-            'ศูนย์ทดสอบ TOEIC สถาบันภาษา มหาวิทยาลัยราชภัฏนครปฐม เป็นผู้จัดการทดสอบ โดยกำกับการสอบตามมาตรฐานของ CPA (Thailand) ผู้สนใจสามารถตรวจสอบกำหนดการและรายละเอียดการสมัครสอบจากเว็บไซต์ต้นฉบับ',
-            'https://sites.google.com/webmail.npru.ac.th/ltc/toeic/toeic-31oct'
-          )"
-        >
-          <span>อ่านรายละเอียด</span>
-          <span class="arrow">→</span>
-        </button>
-
-      </div>
-
-    </article>
-
-
-    <!-- NEWS 3 -->
-
-    <article class="news-card">
-
-      <div class="image-wrapper">
-        <img src="images/News3.webp" alt="รับสมัครนักศึกษา">
-      </div>
-
-      <div class="card-body">
-
-        <div class="meta">
-          <span class="category">รับสมัครนักศึกษา</span>
-          <span class="date">11 กันยายน 2569</span>
-        </div>
-
-        <h4>รับสมัครนักศึกษา</h4>
-
-        <p class="description">
-          รับสมัครนักศึกษาเข้าศึกษาต่อระดับปริญญาตรี
-          ภาคปกติ ประจำปีการศึกษา 2570 (รอบที่ 1)
-        </p>
-
-        <button
-          class="read-more"
-          onclick="openModal(
-            'รับสมัครนักศึกษา',
-            'รับสมัครนักศึกษา ระดับปริญญาตรี ภาคปกติ',
-            '11 กันยายน 2569',
-            'รับสมัครนักศึกษาเข้าศึกษาต่อระดับปริญญาตรี ภาคปกติ ประจำปีการศึกษา 2570 (รอบที่ 1) ผู้สนใจสามารถตรวจสอบกำหนดการ คุณสมบัติ หลักสูตร และรายละเอียดการรับสมัครได้จากเว็บไซต์ต้นฉบับ',
-            'https://admission.npru.ac.th/news/detail/132'
-          )"
-        >
-          <span>อ่านรายละเอียด</span>
-          <span class="arrow">→</span>
-        </button>
-
-      </div>
-
-    </article>
-
-
-    <!-- NEWS 2 -->
-
-    <article class="news-card">
-
-      <div class="image-wrapper">
-        <img src="images/News2.webp" alt="รับสมัครนักศึกษาระดับบัณฑิตศึกษา">
-      </div>
-
-      <div class="card-body">
-
-        <div class="meta">
-          <span class="category">บัณฑิตศึกษา</span>
-          <span class="date">10 กันยายน 2569</span>
-        </div>
-
-        <h4>รับสมัครนักศึกษาระดับบัณฑิตศึกษา</h4>
-
-        <p class="description">
-          รับสมัครหลักสูตรประกาศนียบัตรบัณฑิต
-          สาขาวิชาชีพครู ประจำภาคเรียนที่ 2 ปีการศึกษา 2569
-        </p>
-
-        <button
-          class="read-more"
-          onclick="openModal(
-            'บัณฑิตศึกษา',
-            'รับสมัครนักศึกษาระดับบัณฑิตศึกษา',
-            '10 กันยายน 2569',
-            'รับสมัครนักศึกษาระดับบัณฑิตศึกษา หลักสูตรประกาศนียบัตรบัณฑิต สาขาวิชาชีพครู ประจำภาคเรียนที่ 2 ปีการศึกษา 2569 ผู้สนใจสามารถตรวจสอบรายละเอียดและกำหนดการรับสมัครได้จากเว็บไซต์ต้นฉบับ',
-            'https://admission.npru.ac.th/news/detail/134'
-          )"
-        >
-          <span>อ่านรายละเอียด</span>
-          <span class="arrow">→</span>
-        </button>
-
-      </div>
-
-    </article>
-
-
-    <!-- NEWS 1 -->
-
-    <article class="news-card">
-
-      <div class="image-wrapper">
-        <img src="images/News1.webp" alt="รับสมัครนักศึกษา ภาค กศ.พป.">
-      </div>
-
-      <div class="card-body">
-
-        <div class="meta">
-          <span class="category">รับสมัครนักศึกษา</span>
-          <span class="date">10 กันยายน 2569</span>
-        </div>
-
-        <h4>รับสมัครนักศึกษา ภาค กศ.พป.</h4>
-
-        <p class="description">
-          รับสมัครนักศึกษาเข้าศึกษาต่อระดับปริญญาตรี
-          ภาค กศ.พป. ประจำปีการศึกษา 2570 (รอบที่ 1)
-        </p>
-
-        <button
-          class="read-more"
-          onclick="openModal(
-            'รับสมัครนักศึกษา',
-            'รับสมัครนักศึกษา ภาค กศ.พป.',
-            '10 กันยายน 2569',
-            'รับสมัครนักศึกษาเข้าศึกษาต่อระดับปริญญาตรี ภาค กศ.พป. ประจำปีการศึกษา 2570 (รอบที่ 1) ผู้สนใจสามารถตรวจสอบกำหนดการ คุณสมบัติ และรายละเอียดการสมัครเข้าศึกษาต่อได้จากเว็บไซต์ต้นฉบับ',
-            'https://admission.npru.ac.th/news/detail/135'
-          )"
-        >
-          <span>อ่านรายละเอียด</span>
-          <span class="arrow">→</span>
-        </button>
-
-      </div>
-
-    </article>
-
-
-  </div>
-
-</main>
-
-
-<!-- =========================
-     MODAL
-========================= -->
-
-<div
-  class="modal-overlay"
-  id="newsModal"
-  onclick="closeModalOutside(event)"
->
-
-  <div
-    class="modal"
-    role="dialog"
-    aria-modal="true"
-    aria-labelledby="modalTitle"
-  >
-
-    <button
-      class="modal-close"
-      onclick="closeModal()"
-      aria-label="ปิด"
-    >
-      ×
-    </button>
-
-
-    <div class="modal-icon">
-      ↗
+    <div class="eyebrow">
+      NPRU NEWS &amp; INFORMATION
     </div>
 
+    <h2>ข่าวสารและประชาสัมพันธ์</h2>
 
-    <span
-      class="modal-category"
-      id="modalCategory"
-    >
-    </span>
-
-
-    <h2 id="modalTitle"></h2>
-
-
-    <div
-      class="modal-date"
-      id="modalDate"
-    >
-    </div>
-
-
-    <div class="modal-divider"></div>
-
-
-    <p
-      class="modal-description"
-      id="modalDescription"
-    >
+    <p>
+      รวบรวมข่าวสาร การรับสมัครนักศึกษา ทุนการศึกษา
+      กิจกรรม และข้อมูลที่น่าสนใจจากมหาวิทยาลัยราชภัฏนครปฐม
     </p>
 
+  </section>
 
-    <div class="source-box">
 
-      <div class="source-label">
-        เว็บไซต์ต้นฉบับ
-      </div>
+  <!-- NEWS -->
 
-      <div
-        class="source-text"
-        id="modalURL"
-      >
+  <main class="news-section">
+
+    <div class="section-heading">
+
+      <h3>ข่าวสารล่าสุด</h3>
+
+      <div class="news-count">
+        7 ข่าว
       </div>
 
     </div>
 
 
-    <div class="modal-actions">
+    <div class="news-grid">
 
-      <button
-        class="cancel-button"
-        onclick="closeModal()"
-      >
-        ยกเลิก
+
+      <!-- NEWS 7 -->
+
+      <article class="news-card">
+
+        <div class="news-image">
+          <img src="images/News7.webp"
+               alt="NPRU Open Courseware">
+        </div>
+
+        <div class="news-content">
+
+          <div class="news-meta">
+            <span class="category">การเรียนรู้</span>
+            <span class="date">17 กันยายน 2569</span>
+          </div>
+
+          <h4>Free Courseware</h4>
+
+          <p>
+            อัปสกิลความรู้ฟรี! เรียนได้ทุกที่ ทุกเวลา
+            กับ NPRU Open Courseware ✨
+          </p>
+
+          <button class="read-btn"
+            onclick="openModal(
+              'การเรียนรู้',
+              '17 กันยายน 2569',
+              'Free Courseware',
+              'อัปสกิลความรู้ฟรี! เรียนได้ทุกที่ ทุกเวลา กับ NPRU Open Courseware ✨ แหล่งเรียนรู้ออนไลน์ที่ช่วยให้ผู้สนใจสามารถเรียนรู้และพัฒนาทักษะได้อย่างสะดวก',
+              'images/News7.webp',
+              'http://courseware.npru.ac.th/'
+            )">
+            <span>อ่านรายละเอียด</span>
+            <span>→</span>
+          </button>
+
+        </div>
+
+      </article>
+
+
+      <!-- NEWS 6 -->
+
+      <article class="news-card">
+
+        <div class="news-image">
+          <img src="images/News6.webp"
+               alt="วิศวกรรมซอฟต์แวร์">
+        </div>
+
+        <div class="news-content">
+
+          <div class="news-meta">
+            <span class="category">สาขาแนะนำ</span>
+            <span class="date">15 กันยายน 2569</span>
+          </div>
+
+          <h4>สาขาแนะนำ : วิศวกรรมซอฟต์แวร์</h4>
+
+          <p>
+            ทำความรู้จักสาขาวิชาวิศวกรรมซอฟต์แวร์
+            เรียนรู้การเขียนโปรแกรม การพัฒนาเว็บ
+            และกระบวนการพัฒนาระบบซอฟต์แวร์
+          </p>
+
+          <button class="read-btn"
+            onclick="openModal(
+              'สาขาแนะนำ',
+              '15 กันยายน 2569',
+              'สาขาแนะนำ : วิศวกรรมซอฟต์แวร์',
+              'ทำความรู้จักสาขาวิชาวิศวกรรมซอฟต์แวร์ เรียนรู้การเขียนโปรแกรม การพัฒนาเว็บ เทคโนโลยีซอฟต์แวร์ และกระบวนการพัฒนาระบบ เพื่อเตรียมความพร้อมสู่อาชีพด้านเทคโนโลยี',
+              'images/News6.webp',
+              'https://admission.npru.ac.th/suggest/detail/39'
+            )">
+            <span>อ่านรายละเอียด</span>
+            <span>→</span>
+          </button>
+
+        </div>
+
+      </article>
+
+
+      <!-- NEWS 5 -->
+
+      <article class="news-card">
+
+        <div class="news-image">
+          <img src="images/News5.jpg"
+               alt="ทุนการศึกษา">
+        </div>
+
+        <div class="news-content">
+
+          <div class="news-meta">
+            <span class="category">ทุนการศึกษา</span>
+            <span class="date">14 กันยายน 2569</span>
+          </div>
+
+          <h4>ทุนการศึกษาสำหรับนักศึกษา</h4>
+
+          <p>
+            ข้อมูลทุนการศึกษาสำหรับนักศึกษา ได้แก่
+            ทุน กยศ./กรอ. ทุนเรียนดีมีเงินเดือน
+            และทุนการศึกษาของมหาวิทยาลัย
+          </p>
+
+          <button class="read-btn"
+            onclick="openModal(
+              'ทุนการศึกษา',
+              '14 กันยายน 2569',
+              'ทุนการศึกษาสำหรับนักศึกษา',
+              'ข้อมูลทุนการศึกษาสำหรับนักศึกษา ได้แก่ ทุน กยศ./กรอ. ทุนเรียนดีมีเงินเดือน และทุนการศึกษาของมหาวิทยาลัย สำหรับผู้ที่ต้องการศึกษารายละเอียดและเงื่อนไขการสมัคร',
+              'images/News5.jpg',
+              'https://admission.npru.ac.th/scholarship'
+            )">
+            <span>อ่านรายละเอียด</span>
+            <span>→</span>
+          </button>
+
+        </div>
+
+      </article>
+
+
+      <!-- NEWS 4 -->
+
+      <article class="news-card">
+
+        <div class="news-image">
+          <img src="images/News4.png"
+               alt="TOEIC EXAM REGISTRATION">
+        </div>
+
+        <div class="news-content">
+
+          <div class="news-meta">
+            <span class="category">การทดสอบภาษา</span>
+            <span class="date">11 กันยายน 2569</span>
+          </div>
+
+          <h4>TOEIC EXAM REGISTRATION</h4>
+
+          <p>
+            ศูนย์ทดสอบ TOEIC สถาบันภาษา
+            มหาวิทยาลัยราชภัฏนครปฐม
+            จัดการทดสอบโดยกำกับการสอบโดย CPA (Thailand)
+          </p>
+
+          <button class="read-btn"
+            onclick="openModal(
+              'การทดสอบภาษา',
+              '11 กันยายน 2569',
+              'TOEIC EXAM REGISTRATION',
+              'ศูนย์ทดสอบ TOEIC สถาบันภาษา มหาวิทยาลัยราชภัฏนครปฐม เป็นผู้จัดการทดสอบ โดยกำกับการสอบโดย CPA (Thailand) ผู้สนใจสามารถตรวจสอบรายละเอียด วันสอบ และข้อมูลการสมัครได้จากเว็บไซต์ต้นฉบับ',
+              'images/News4.png',
+              'https://sites.google.com/webmail.npru.ac.th/ltc/toeic/toeic-31oct'
+            )">
+            <span>อ่านรายละเอียด</span>
+            <span>→</span>
+          </button>
+
+        </div>
+
+      </article>
+
+
+      <!-- NEWS 3 -->
+
+      <article class="news-card">
+
+        <div class="news-image">
+          <img src="images/News3.webp"
+               alt="รับสมัครนักศึกษา">
+        </div>
+
+        <div class="news-content">
+
+          <div class="news-meta">
+            <span class="category">รับสมัครนักศึกษา</span>
+            <span class="date">11 กันยายน 2569</span>
+          </div>
+
+          <h4>รับสมัครนักศึกษา</h4>
+
+          <p>
+            รับสมัครนักศึกษาเข้าศึกษาต่อระดับปริญญาตรี
+            ภาคปกติ ประจำปีการศึกษา 2570 (รอบที่ 1)
+          </p>
+
+          <button class="read-btn"
+            onclick="openModal(
+              'รับสมัครนักศึกษา',
+              '11 กันยายน 2569',
+              'รับสมัครนักศึกษา',
+              'รับสมัครนักศึกษาเข้าศึกษาต่อระดับปริญญาตรี ภาคปกติ ประจำปีการศึกษา 2570 (รอบที่ 1) ผู้สนใจสามารถตรวจสอบรายละเอียด คุณสมบัติ และกำหนดการรับสมัครได้จากเว็บไซต์รับสมัครนักศึกษา',
+              'images/News3.webp',
+              'https://admission.npru.ac.th/news/detail/132'
+            )">
+            <span>อ่านรายละเอียด</span>
+            <span>→</span>
+          </button>
+
+        </div>
+
+      </article>
+
+
+      <!-- NEWS 2 -->
+
+      <article class="news-card">
+
+        <div class="news-image">
+          <img src="images/News2.webp"
+               alt="รับสมัครนักศึกษาระดับบัณฑิตศึกษา">
+        </div>
+
+        <div class="news-content">
+
+          <div class="news-meta">
+            <span class="category">บัณฑิตศึกษา</span>
+            <span class="date">10 กันยายน 2569</span>
+          </div>
+
+          <h4>รับสมัครนักศึกษาระดับบัณฑิตศึกษา</h4>
+
+          <p>
+            รับสมัครนักศึกษาระดับบัณฑิตศึกษา
+            หลักสูตรประกาศนียบัตรบัณฑิต สาขาวิชาชีพครู
+            ประจำภาคเรียนที่ 2 ปีการศึกษา 2569
+          </p>
+
+          <button class="read-btn"
+            onclick="openModal(
+              'บัณฑิตศึกษา',
+              '10 กันยายน 2569',
+              'รับสมัครนักศึกษาระดับบัณฑิตศึกษา',
+              'รับสมัครนักศึกษาระดับบัณฑิตศึกษา หลักสูตรประกาศนียบัตรบัณฑิต สาขาวิชาชีพครู ประจำภาคเรียนที่ 2 ปีการศึกษา 2569 ผู้สนใจสามารถตรวจสอบรายละเอียดการรับสมัครและกำหนดการได้จากเว็บไซต์ต้นฉบับ',
+              'images/News2.webp',
+              'https://admission.npru.ac.th/news/detail/134'
+            )">
+            <span>อ่านรายละเอียด</span>
+            <span>→</span>
+          </button>
+
+        </div>
+
+      </article>
+
+
+      <!-- NEWS 1 -->
+
+      <article class="news-card">
+
+        <div class="news-image">
+          <img src="images/News1.webp"
+               alt="รับสมัครนักศึกษา ภาค กศ.พป.">
+        </div>
+
+        <div class="news-content">
+
+          <div class="news-meta">
+            <span class="category">รับสมัครนักศึกษา</span>
+            <span class="date">10 กันยายน 2569</span>
+          </div>
+
+          <h4>รับสมัครนักศึกษา ภาค กศ.พป.</h4>
+
+          <p>
+            รับสมัครนักศึกษาเข้าศึกษาต่อระดับปริญญาตรี
+            ภาค กศ.พป. ประจำปีการศึกษา 2570 (รอบที่ 1)
+          </p>
+
+          <button class="read-btn"
+            onclick="openModal(
+              'รับสมัครนักศึกษา',
+              '10 กันยายน 2569',
+              'รับสมัครนักศึกษา ภาค กศ.พป.',
+              'รับสมัครนักศึกษาเข้าศึกษาต่อระดับปริญญาตรี ภาค กศ.พป. ประจำปีการศึกษา 2570 (รอบที่ 1) ผู้สนใจสามารถตรวจสอบกำหนดการ คุณสมบัติ และรายละเอียดการสมัครเข้าศึกษาต่อได้จากเว็บไซต์ต้นฉบับ',
+              'images/News1.webp',
+              'https://admission.npru.ac.th/news/detail/135'
+            )">
+            <span>อ่านรายละเอียด</span>
+            <span>→</span>
+          </button>
+
+        </div>
+
+      </article>
+
+
+    </div>
+
+  </main>
+
+
+  <!-- FOOTER -->
+
+  <footer>
+    มหาวิทยาลัยราชภัฏนครปฐม · Nakhon Pathom Rajabhat University
+  </footer>
+
+
+  <!-- MODAL -->
+
+  <div class="modal" id="newsModal">
+
+    <div class="modal-box">
+
+      <button class="close-x"
+              type="button"
+              onclick="closeModal()">
+        ×
       </button>
 
+      <img id="modalImage"
+           class="modal-image"
+           src=""
+           alt="">
 
-      <a
-        class="visit-button"
-        id="visitWebsite"
-        href="#"
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        ไปยังเว็บไซต์ต้นฉบับ
-        <span>↗</span>
-      </a>
+      <div class="modal-body">
+
+        <div class="modal-top">
+
+          <span class="modal-category"
+                id="modalCategory">
+          </span>
+
+          <span class="modal-date"
+                id="modalDate">
+          </span>
+
+        </div>
+
+        <h2 class="modal-title"
+            id="modalTitle">
+        </h2>
+
+        <p class="modal-description"
+           id="modalDescription">
+        </p>
+
+        <div class="modal-actions">
+
+          <button type="button"
+                  class="modal-cancel"
+                  onclick="closeModal()">
+            ปิด
+          </button>
+
+          <a class="modal-link"
+             id="modalLink"
+             href="#"
+             target="_blank"
+             rel="noopener noreferrer">
+            ไปยังข่าวต้นฉบับ ↗
+          </a>
+
+        </div>
+
+      </div>
 
     </div>
 
   </div>
 
-</div>
 
+  <!-- JAVASCRIPT -->
 
-<!-- =========================
-     FOOTER
-========================= -->
+  <script>
 
-<footer>
-  มหาวิทยาลัยราชภัฏนครปฐม • NPRU News &amp; Information
-</footer>
+    function openModal(category, date, title, description, image, link) {
 
+      document.getElementById("modalCategory").textContent = category;
+      document.getElementById("modalDate").textContent = date;
+      document.getElementById("modalTitle").textContent = title;
+      document.getElementById("modalDescription").textContent = description;
 
-<!-- =========================
-     JAVASCRIPT
-========================= -->
+      document.getElementById("modalImage").src = image;
+      document.getElementById("modalImage").alt = title;
 
-<script>
+      document.getElementById("modalLink").href = link;
 
-  const modal = document.getElementById("newsModal");
+      document.getElementById("newsModal").classList.add("active");
 
+      document.body.classList.add("modal-open");
 
-  function openModal(category, title, date, description, url) {
-
-    document.getElementById("modalCategory").textContent = category;
-
-    document.getElementById("modalTitle").textContent = title;
-
-    document.getElementById("modalDate").textContent =
-      "วันที่ " + date;
-
-    document.getElementById("modalDescription").textContent =
-      description;
-
-    document.getElementById("modalURL").textContent =
-      url;
-
-    document.getElementById("visitWebsite").href =
-      url;
-
-
-    modal.classList.add("active");
-
-    document.body.classList.add("modal-open");
-  }
-
-
-  function closeModal() {
-
-    modal.classList.remove("active");
-
-    document.body.classList.remove("modal-open");
-  }
-
-
-  function closeModalOutside(event) {
-
-    if (event.target === modal) {
-      closeModal();
     }
 
-  }
 
+    function closeModal() {
 
-  document.addEventListener("keydown", function(event) {
+      document.getElementById("newsModal").classList.remove("active");
 
-    if (event.key === "Escape") {
-      closeModal();
+      document.body.classList.remove("modal-open");
+
     }
 
-  });
 
-</script>
+    /* คลิกพื้นที่ด้านนอกกล่องเพื่อปิด */
 
+    document.getElementById("newsModal").addEventListener("click", function(event) {
+
+      if (event.target === this) {
+        closeModal();
+      }
+
+    });
+
+
+    /* กด ESC เพื่อปิด */
+
+    document.addEventListener("keydown", function(event) {
+
+      if (event.key === "Escape") {
+        closeModal();
+      }
+
+    });
+
+  </script>
 
 </body>
+
 </html>
