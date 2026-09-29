@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Sutarat Chaonafang - ศูนย์รวมข่าวสารและบทความ</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>body{font-family:'Kanit',sans-serif}.clamp{display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}</style>
+</head>
+<body class="bg-slate-50 text-slate-800 min-h-screen">
+<header class="bg-white border-b border-slate-200 sticky top-0 z-30">
+<div class="max-w-6xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between">
+<div class="flex items-center gap-3"><div class="w-10 h-10 rounded-xl bg-blue-600 text-white flex items-center justify-center shadow-sm"><i class="fa-solid fa-newspaper"></i></div>
+<div><h1 class="font-bold text-lg leading-tight text-slate-900">Sutarat Chaonafang</h1><p class="text-xs text-slate-500">ศูนย์รวมข่าวสารและบทความ</p></div></div>
+<div class="hidden sm:flex items-center gap-2 text-sm font-medium text-blue-700 bg-blue-50 px-4 py-2 rounded-xl"><i class="fa-solid fa-house"></i><span>ข่าวสารล่าสุด</span></div>
+</div></header>
+<main class="max-w-6xl mx-auto px-4 sm:px-6 py-8">
+<section class="mb-6"><p class="text-blue-600 text-sm font-medium mb-1">NPRU NEWS</p><h2 class="text-2xl sm:text-3xl font-bold text-slate-900">ข่าวสารล่าสุด</h2><p class="text-sm text-slate-500 mt-1">รวบรวมข่าวสารที่น่าสนใจจากมหาวิทยาลัยราชภัฏนครปฐม</p></section>
+<section class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+<article onclick="openNewsModal()" class="bg-white rounded-2xl border border-slate-200 overflow-hidden shadow-sm hover:shadow-lg hover:-translate-y-1 transition duration-300 cursor-pointer group">
+<div class="aspect-[16/9] overflow-hidden bg-slate-100"><img src="images/graduate-admission-2569.webp" alt="การรับสมัครนักศึกษาระดับบัณฑิตศึกษา" class="w-full h-full object-cover group-hover:scale-105 transition duration-500"></div>
+<div class="p-5"><div class="flex items-center gap-2 mb-3"><span class="text-xs font-medium px-2.5 py-1 bg-pink-50 text-pink-600 rounded-full">ประชาสัมพันธ์</span><span class="text-xs text-slate-400"><i class="fa-regular fa-newspaper mr-1"></i>NPRU</span></div>
+<h3 class="font-semibold text-lg text-slate-900 leading-snug group-hover:text-blue-600 transition">การรับสมัครนักศึกษาระดับบัณฑิตศึกษา ประจำภาคเรียนที่ 2 ปีการศึกษา 2569</h3>
+<p class="text-sm text-slate-500 leading-relaxed mt-3 clamp">การรับสมัครนักศึกษาระดับบัณฑิตศึกษา ประจำภาคเรียนที่ 2 ปีการศึกษา 2569</p>
+<div class="mt-5 pt-4 border-t border-slate-100 flex items-center justify-between"><span class="text-sm font-medium text-blue-600">อ่านรายละเอียด</span><i class="fa-solid fa-arrow-right text-blue-500 group-hover:translate-x-1 transition"></i></div></div>
+</article></section></main>
+<footer class="max-w-6xl mx-auto px-4 sm:px-6 py-8 text-center text-xs text-slate-400">Sutarat Chaonafang · News &amp; Articles</footer>
+<div id="news-modal" class="fixed inset-0 bg-slate-900/60 backdrop-blur-sm z-50 hidden items-center justify-center p-4">
+<div class="bg-white rounded-2xl max-w-3xl w-full max-h-[90vh] overflow-y-auto shadow-2xl">
+<div class="p-4 border-b border-slate-100 flex justify-between items-center sticky top-0 bg-white z-10"><span class="text-xs font-semibold px-3 py-1 bg-pink-50 text-pink-600 rounded-full">ประชาสัมพันธ์</span><button onclick="closeNewsModal()" class="w-9 h-9 rounded-full hover:bg-slate-100 text-slate-500"><i class="fa-solid fa-xmark text-lg"></i></button></div>
+<div class="p-5 sm:p-7"><img src="images/graduate-admission-2569.webp" alt="การรับสมัครนักศึกษาระดับบัณฑิตศึกษา" class="w-full rounded-xl border border-slate-100">
+<h3 class="text-xl sm:text-2xl font-bold text-slate-900 leading-snug mt-6">การรับสมัครนักศึกษาระดับบัณฑิตศึกษา ประจำภาคเรียนที่ 2 ปีการศึกษา 2569</h3>
+<p class="text-slate-600 leading-relaxed mt-4">การรับสมัครนักศึกษาระดับบัณฑิตศึกษา ประจำภาคเรียนที่ 2 ปีการศึกษา 2569</p>
+<div class="mt-6"><a href="https://admission.npru.ac.th/news/detail/133" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 bg-blue-600 hover:bg-blue-700 text-white font-medium px-5 py-3 rounded-xl transition"><span>อ่านข่าวต้นฉบับ</span><i class="fa-solid fa-arrow-up-right-from-square text-xs"></i></a></div>
+</div></div></div>
+<script>
+function openNewsModal(){const m=document.getElementById('news-modal');m.classList.remove('hidden');m.classList.add('flex');document.body.style.overflow='hidden'}
+function closeNewsModal(){const m=document.getElementById('news-modal');m.classList.add('hidden');m.classList.remove('flex');document.body.style.overflow='auto'}
+document.getElementById('news-modal').addEventListener('click',e=>{if(e.target.id==='news-modal')closeNewsModal()});
+document.addEventListener('keydown',e=>{if(e.key==='Escape')closeNewsModal()});
+</script></body></html>
